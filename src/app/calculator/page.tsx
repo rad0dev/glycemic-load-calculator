@@ -1,5 +1,5 @@
 import Container from '@/components/atoms/Container'
-import Calculator from '@/components/molecules/Calculator'
+import Calculator from '@/components/organisms/Calculator'
 
 export default function Home() {
   return (
