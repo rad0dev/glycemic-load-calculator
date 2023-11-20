@@ -7,8 +7,8 @@ const CalculatorRows: FC = () => {
 
   return (
     <ul>
-      {products.map(({ id }) => {
-        return <CalculatorRow id={id} key={id} />
+      {products.map((product) => {
+        return <CalculatorRow key={product.id} {...product} />
       })}
     </ul>
   )

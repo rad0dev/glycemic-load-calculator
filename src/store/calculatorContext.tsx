@@ -6,12 +6,18 @@ type CalculatorContextObj = {
   products: Product[]
   addProduct: () => void
   removeProduct: (id: string) => void
+  updateProduct: (
+    id: string,
+    key: keyof Product,
+    value: string | number,
+  ) => void
 }
 
 export const CalculatorContext = createContext<CalculatorContextObj>({
   products: [],
   addProduct: () => {},
   removeProduct: (id: string) => {},
+  updateProduct: (id: string, key: keyof Product, value: string | number) => {},
 })
 
 const CalculatorContextProvider: FC<PropsWithChildren> = (props) => {
@@ -23,8 +29,6 @@ const CalculatorContextProvider: FC<PropsWithChildren> = (props) => {
     setProducts((prevProducts) => {
       return prevProducts.concat(newProduct)
     })
-
-    console.log(products)
   }
 
   const removeProductHandler = (productId: string) => {
@@ -33,10 +37,29 @@ const CalculatorContextProvider: FC<PropsWithChildren> = (props) => {
     })
   }
 
+  const updateProductHandler = (
+    productId: string,
+    key: keyof Product,
+    value: string | number,
+  ) => {
+    setProducts((prevProducts) => {
+      return prevProducts.map((product) => {
+        if (product.id === productId) {
+          return {
+            ...product,
+            [key]: value,
+          }
+        }
+        return product
+      })
+    })
+  }
+
   const contextValue: CalculatorContextObj = {
     products,
     addProduct: addProductHandler,
     removeProduct: removeProductHandler,
+    updateProduct: updateProductHandler,
   }
 
   return (

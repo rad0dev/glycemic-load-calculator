@@ -5,6 +5,7 @@ import CalculatorContextProvider from '@/store/calculatorContext'
 import Container from '@/components/atoms/Container'
 import CalculatorRows from '@/components/molecules/CalculatorRows'
 import CalculatorButtons from '@/components/molecules/CalculatorButtons'
+import CalculatorResult from '@/components/molecules/CalculatorResult'
 
 const Calculator: FC = () => {
   return (
@@ -20,6 +21,7 @@ const Calculator: FC = () => {
         </div>
         <CalculatorRows />
         <CalculatorButtons />
+        <CalculatorResult />
       </Container>
     </CalculatorContextProvider>
   )
