@@ -1,4 +1,4 @@
-class Food {
+class Product {
   id: string
   name?: string
   serving?: number
@@ -11,4 +11,4 @@ class Food {
   }
 }
 
-export default Food
+export default Product

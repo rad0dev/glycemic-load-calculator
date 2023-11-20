@@ -1,10 +1,16 @@
 'use client'
 
-import { useState } from 'react'
-import { FC } from 'react'
+import { FC, useContext } from 'react'
+import { CalculatorContext } from '@/store/calculatorContext'
 import Input from '@/components/atoms/Input'
 
 const CalculatorRow: FC<{ id: string }> = ({ id }) => {
+  const { removeProduct } = useContext(CalculatorContext)
+
+  const removeProductHandler = () => {
+    removeProduct(id)
+  }
+
   return (
     <li className="flex -mx-2 mb-4">
       <div className="flex-1 mx-2">
@@ -26,7 +32,7 @@ const CalculatorRow: FC<{ id: string }> = ({ id }) => {
         <button
           className="shadow appearance-none border rounded w-full h-10 text-lg font-semibold bg-red-600 text-white focus:outline-none focus:shadow-outline"
           type="button"
-          onClick={() => {}}
+          onClick={removeProductHandler}
         >
           -
         </button>
