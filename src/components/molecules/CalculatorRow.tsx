@@ -12,7 +12,7 @@ const CalculatorRow: FC<{ id: string }> = ({ id }) => {
   }
 
   return (
-    <li className="flex -mx-2 mb-4">
+    <li className="flex -mx-2 mb-4" data-testid={id}>
       <div className="flex-1 mx-2">
         <Input id={`food#${id}`} />
       </div>
