@@ -9,8 +9,8 @@ const CalculatorRow: FC<Product> = ({
   id,
   name,
   serving,
-  carbs,
-  fiber,
+  carbsPerServing,
+  fiberPerServing,
   gi,
 }) => {
   const { removeProduct, updateProduct } = useContext(CalculatorContext)
@@ -19,7 +19,7 @@ const CalculatorRow: FC<Product> = ({
     removeProduct(id)
   }
 
-  const inputOnChangeHandler = (key: keyof Product, value: string | number) => {
+  const inputOnChangeHandler = (key: keyof Product, value: string) => {
     updateProduct(id, key, value)
   }
 
@@ -45,8 +45,8 @@ const CalculatorRow: FC<Product> = ({
         <Input
           id={`carbs#${id}`}
           type="number"
-          value={carbs}
-          productKey="carbs"
+          value={carbsPerServing}
+          productKey="carbsPerServing"
           onChangeHandler={inputOnChangeHandler}
         />
       </div>
@@ -54,8 +54,8 @@ const CalculatorRow: FC<Product> = ({
         <Input
           id={`fiber#${id}`}
           type="number"
-          value={fiber}
-          productKey="fiber"
+          value={fiberPerServing}
+          productKey="fiberPerServing"
           onChangeHandler={inputOnChangeHandler}
         />
       </div>

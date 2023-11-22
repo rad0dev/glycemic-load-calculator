@@ -6,7 +6,7 @@ interface InputProps {
   type?: 'text' | 'number'
   productKey?: keyof Product
   value?: string | number
-  onChangeHandler?: (key: keyof Product, value: string | number) => void
+  onChangeHandler?: (key: keyof Product, value: string) => void
 }
 
 const Input: FC<InputProps> = ({
@@ -14,7 +14,7 @@ const Input: FC<InputProps> = ({
   type = 'text',
   productKey = 'name',
   value = '',
-  onChangeHandler = (key: keyof Product, value: string | number) => {},
+  onChangeHandler = (key: keyof Product, value: string) => {},
 }) => (
   <input
     className="shadow appearance-none border rounded w-full h-10 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"

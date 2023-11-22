@@ -2,8 +2,8 @@ class Product {
   id: string
   name?: string
   serving?: number
-  carbs?: number
-  fiber?: number
+  carbsPerServing?: number
+  fiberPerServing?: number
   gi?: number
 
   constructor() {
