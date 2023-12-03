@@ -12,7 +12,7 @@ describe('CalculatorButtons', () => {
       </CalculatorContext.Provider>,
     )
 
-    fireEvent.click(getByText('+'))
+    fireEvent.click(getByText('Add Product +'))
 
     expect(addProduct).toHaveBeenCalledTimes(1)
   })

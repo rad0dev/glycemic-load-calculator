@@ -5,10 +5,12 @@ import CalculatorRow from '@/components/molecules/CalculatorRow'
 const CalculatorRows: FC = () => {
   const { products } = useContext(CalculatorContext)
 
+  console.log(products)
+
   return (
     <ul>
-      {products.map((product) => {
-        return <CalculatorRow key={product.id} {...product} />
+      {products.map((product, index) => {
+        return <CalculatorRow key={product.id} index={index} {...product} />
       })}
     </ul>
   )

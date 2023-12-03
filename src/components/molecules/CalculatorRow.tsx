@@ -5,7 +5,12 @@ import { CalculatorContext } from '@/store/calculatorContext'
 import Input from '@/components/atoms/Input'
 import Product from '@/models/product'
 
-const CalculatorRow: FC<Product> = ({
+interface CalculatorRowProps extends Product {
+  index: number
+}
+
+const CalculatorRow: FC<CalculatorRowProps> = ({
+  index,
   id,
   name,
   serving,
@@ -68,14 +73,18 @@ const CalculatorRow: FC<Product> = ({
           onChangeHandler={inputOnChangeHandler}
         />
       </div>
-      <div className="flex-none w-12 mx-2">
-        <button
-          className="shadow appearance-none border rounded w-full h-10 text-lg font-semibold bg-red-600 text-white focus:outline-none focus:shadow-outline"
-          type="button"
-          onClick={removeProductHandler}
-        >
-          -
-        </button>
+      <div className="flex-none w-24 mx-2">
+        {index ? (
+          <button
+            className="appearance-none border outline-0 rounded-full w-full h-10 text-lg font-semibold bg-gradient-to-r from-red-600 to-red-700 text-white hover:from-red-500 hover:to-red-600"
+            type="button"
+            onClick={removeProductHandler}
+          >
+            -
+          </button>
+        ) : (
+          ''
+        )}
       </div>
     </li>
   )

@@ -17,7 +17,7 @@ const Input: FC<InputProps> = ({
   onChangeHandler = (key: keyof Product, value: string) => {},
 }) => (
   <input
-    className="shadow appearance-none border rounded w-full h-10 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+    className="bg-slate-100 appearance-none rounded-full w-full h-10 px-3 text-purple-950 leading-tight focus:outline-none focus:shadow-outline"
     id={id}
     type={type}
     data-testid={id}

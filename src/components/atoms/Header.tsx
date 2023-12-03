@@ -8,7 +8,7 @@ const Header: FC<HeaderProps> = ({ children, level = 'h1' }: HeaderProps) => {
   const HeaderTag = level
 
   return (
-    <HeaderTag className="mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-slate-900">
+    <HeaderTag className="mx-auto max-w-4xl font-display text-4xl font-bold tracking-tight text-purple-950">
       {children}
     </HeaderTag>
   )

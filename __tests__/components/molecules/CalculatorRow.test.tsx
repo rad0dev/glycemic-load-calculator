@@ -14,7 +14,7 @@ describe('CalculatorRow', () => {
     const id = 'calculator-row'
     render(
       <CalculatorContext.Provider value={{ removeProduct }}>
-        <CalculatorRow id={id} />
+        <CalculatorRow id={id} index={1} />
       </CalculatorContext.Provider>,
     )
 

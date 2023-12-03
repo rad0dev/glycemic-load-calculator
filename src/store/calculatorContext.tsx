@@ -17,7 +17,7 @@ export const CalculatorContext = createContext<CalculatorContextObj>({
 })
 
 const CalculatorContextProvider: FC<PropsWithChildren> = (props) => {
-  const [products, setProducts] = useState<Product[]>([])
+  const [products, setProducts] = useState<Product[]>([new Product()])
 
   const addProductHandler = () => {
     const newProduct = new Product()

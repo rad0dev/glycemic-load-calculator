@@ -75,12 +75,14 @@ const CalculatorResult: FC = () => {
   }
 
   return (
-    <div className="mt-6">
-      <div className="font-display tracking-tight text-slate-900 text-xl">
-        Glycemic Load
-      </div>
-      <div className={`font-display tracking-tight text-5xl ${resultCssClass}`}>
-        {glycemicLoad.toFixed(2)}
+    <div className="relative w-96 mx-auto">
+      <span className="absolute bottom-6 -left-6 block w-12 h-12 rounded-full bg-gradient-to-b from-amber-400 to-orange-500"></span>
+      <span className="absolute -top-6 -right-10 block w-24 h-24 rounded-full bg-gradient-to-b from-amber-400 to-orange-500"></span>
+      <div className="relative rounded-2xl w-full py-10 text-center bg-white">
+        <div className="mb-2 font-light text-2xl">Glycemic Load</div>
+        <div className={`font-bold text-5xl ${resultCssClass}`}>
+          {glycemicLoad.toFixed(2)}
+        </div>
       </div>
     </div>
   )

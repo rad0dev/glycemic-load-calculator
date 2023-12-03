@@ -9,13 +9,15 @@ const CalculatorButtons: FC = () => {
   }
 
   return (
-    <button
-      className="shadow appearance-none border rounded w-full h-10 text-lg font-semibold bg-green-600 text-white focus:outline-none focus:shadow-outline"
-      type="button"
-      onClick={addProductHandler}
-    >
-      +
-    </button>
+    <div className="mt-12 text-center">
+      <button
+        className="appearance-none border outline-0 rounded-full w-80 h-10 text-lg font-semibold bg-gradient-to-br from-cyan-400 to-cyan-500 text-white hover:from-cyan-300 hover:to-cyan-400"
+        type="button"
+        onClick={addProductHandler}
+      >
+        Add Product +
+      </button>
+    </div>
   )
 }
 
